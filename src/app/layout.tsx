@@ -21,16 +21,17 @@ const siteUrl = getSiteUrl();
 const pageTitle = `${site.name} | ${site.title}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  // Origin only: Next adds the base path to metadata images itself.
+  metadataBase: new URL(new URL(siteUrl).origin),
   title: pageTitle,
   description: site.description,
   keywords: site.keywords,
   authors: [{ name: site.name, url: siteUrl }],
   creator: site.name,
-  alternates: { canonical: "/" },
+  alternates: { canonical: siteUrl },
   openGraph: {
     type: "website",
-    url: "/",
+    url: siteUrl,
     title: pageTitle,
     description: site.description,
     siteName: site.name,

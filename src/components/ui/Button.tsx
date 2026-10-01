@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { cn, isExternal } from "@/lib/utils";
+import { asset, cn, isExternal } from "@/lib/utils";
 
 type Variant = "primary" | "secondary" | "ghost";
 type Size = "sm" | "md";
@@ -69,7 +69,7 @@ export function Button({
       const newTab = href.startsWith("http");
       return (
         <a
-          href={href}
+          href={asset(href)}
           className={classes}
           download={download}
           {...(newTab && { target: "_blank", rel: "noopener noreferrer" })}

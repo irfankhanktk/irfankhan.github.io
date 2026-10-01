@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
+import { asset } from "@/lib/utils";
 import type { Project } from "@/types/portfolio";
 import { Button, Card, Tag } from "@/components/ui";
 
@@ -12,7 +13,7 @@ export function ProjectCard({ project, priority }: { project: Project; priority?
       <div className="flex h-full flex-col @2xl:flex-row">
         <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface-2 @2xl:aspect-auto @2xl:w-1/2 @2xl:border-r @2xl:border-b-0">
           <Image
-            src={image}
+            src={asset(image)}
             alt={imageAlt}
             fill
             priority={priority}

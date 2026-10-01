@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { FiArrowRight, FiDownload, FiMail, FiMapPin } from "react-icons/fi";
 import { SiUpwork } from "react-icons/si";
 import { about, site, upworkUrl } from "@/data/portfolio";
+import { asset } from "@/lib/utils";
 import { Button, Container, RotatingText } from "@/components/ui";
 import { CodeWindow } from "./CodeWindow";
 
@@ -73,7 +74,7 @@ export function Hero() {
               <FiMapPin aria-hidden className="text-accent" /> {site.location}
             </span>
             <a
-              href={site.resumeUrl}
+              href={asset(site.resumeUrl)}
               download
               className="inline-flex items-center gap-2 underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
             >
